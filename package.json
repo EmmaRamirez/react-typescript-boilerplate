@@ -7,6 +7,7 @@
     "test": "jest --coverage --config jest-config.json",
     "prebuild": "npm run lint",
     "build": "webpack",
+    "build:production": "webpack --env=PRODUCTION",
     "build:watch": "webpack --watch",
     "clean:dist": "rimraf dist",
     "clean:modules": "rimraf node_modules",
@@ -14,6 +15,7 @@
     "pretest": "npm run lint",
     "lint": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
     "prestart": "webpack",
+    "serve:dev": "webpack-dev-server",
     "serve": "ts-node --disableWarnings ./server.ts",
     "start": "npm run serve",
     "format": "prettier --config .prettierrc --write {src}/**/*.{ts,tsx} && npm run lint"
@@ -27,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/redux-logger": "^3.0.5",
+    "awesome-typescript-loader": "^3.4.1",
     "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
@@ -36,8 +39,10 @@
     "redux-saga": "^0.16.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
+    "tslint-loader": "^3.5.3",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "devDependencies": {
     "@types/jest": "^22.1.1",
