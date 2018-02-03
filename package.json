@@ -4,7 +4,18 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage --config jest-config.json",
+    "prebuild": "npm run lint",
+    "build": "webpack",
+    "build:watch": "webpack --watch",
+    "styleguide": "styleguidist server --config styleguide.config.js --verbose",
+    "styleguide:build": "styleguidist build --config styleguide.config.js --verbose",
+    "clean": "rimraf dist",
+    "pretest": "npm run lint",
+    "lint": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
+    "prestart": "webpack",
+    "serve": "ts-node --disableWarnings server-src",
+    "start": "npm run serve"
   },
   "keywords": [
     "react",
@@ -12,5 +23,31 @@
     "boilerplate"
   ],
   "author": "Emma Ramirez <ramirez.emma.g@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^1.10.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.0",
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.1.4",
+    "postcss": "^6.0.17",
+    "react": "^16.2.0",
+    "react-cosmos": "^3.4.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.6.8",
+    "ts-jest": "^22.0.2",
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.2",
+    "typescript": "^2.7.1"
+  }
 }
