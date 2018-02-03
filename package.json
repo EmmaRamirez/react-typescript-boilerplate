@@ -1,0 +1,16 @@
+{
+  "name": "react-typescript-boilerplate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.tsx",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "boilerplate"
+  ],
+  "author": "Emma Ramirez <ramirez.emma.g@gmail.com>",
+  "license": "MIT"
+}
