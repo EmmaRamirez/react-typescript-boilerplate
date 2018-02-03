@@ -1,6 +1,10 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+
+const extractSass = new ExtractTextPlugin({ filename: 'styles.css', allChunks: true });
 
 module.exports = {
     entry: './src/index.tsx',
@@ -43,14 +47,42 @@ module.exports = {
                     path.resolve(__dirname, 'src')
                 ]
             },
+            // /* Use this if you plan on using css */
+            // {
+            //     test: /\.css$/,
+            //     use: ExtractTextPlugin({
+            //         fallback: 'style-loader',
+            //         use: [
+            //             {
+            //                 loader: 'css-loader',
+            //                 options: {
+            //                     modules: true,
+            //                     localIdentName: '[name]__[local]__[hash:base64:5]'
+            //                 }
+            //             },
+            //             'postcss-loader'
+            //         ]
+            //     })
+            // },
             {
                 test: /\.s(a|c)ss$/,
-                loader: ['style-loader', 'css-loader', 'sass-loader']
+                use: extractSass.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                sourceMap: true,
+                                importLoaders: 2,
+                                localIdentName: '[name]__[local]__[hash:base64:5]'
+                            }
+                        },
+                        'sass-loader'
+                    ]
+                })
             },
-            {
-                test: /\.css$/,
-                loader: ['style-loader', 'css-loader']
-            },
+            
             {
                 test: /\.(woff|woff2)$/,
                 loader: 'url-loader',
@@ -77,8 +109,24 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: './src/index.html', to: './index.html' },
-        ])
-    ]
+        // /* Use this plugin to transfer from source to dist */
+        // new CopyWebpackPlugin([
+        //     { from: './src/index.html', to: './index.html' },
+        // ]),
+
+        new HtmlWebpackPlugin({
+            inject: true,
+            template: './src/index.html',
+        }),
+
+        extractSass,
+
+        new webpack.IgnorePlugin(/^\.\locale$/, /moment$/),
+    ],
+    externals: {
+        dgram: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
+    },
 };

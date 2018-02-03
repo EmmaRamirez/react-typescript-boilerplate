@@ -65,6 +65,7 @@
           "property-declaration": "nospace",
           "variable-declaration": "nospace"
       }],
+      "trailing-comma": true,
       "valid-typeof": true,
       "variable-name": [true, "ban-keywords"],
       "whitespace": [true,
