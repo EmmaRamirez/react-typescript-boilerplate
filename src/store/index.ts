@@ -14,7 +14,7 @@ import { reducers } from 'reducers';
 import { rootSaga } from 'sagas';
 
 const config = {
-  key: 'root',
+  key: 'app',
   blacklist: ['router'],
   storage
 };

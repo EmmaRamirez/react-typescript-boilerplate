@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Button } from 'components';
+
 import './App.scss';
 
 export class App extends React.Component<any, any> {
@@ -10,7 +12,7 @@ export class App extends React.Component<any, any> {
     public render() {
         return (
             <div className='app'>
-                Hello
+                <Button>Hi</Button>
             </div>
         );
     }
