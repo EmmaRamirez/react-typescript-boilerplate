@@ -13,5 +13,9 @@ rename the repo, git init, etc
 ```
 
 ## Features
-
-TBD.
+- ⌨ typescript-first with tslint & prettier
+- 👌 react-router, redux-persist, and more out of the box
+- 🕸 webpack for code-splitting, hot reloading, and more!
+- 🔧 utilities for creating components, deployment, and CI
+- 🎨 sass modules + styled components
+- 💹 built for DX with minimal config
