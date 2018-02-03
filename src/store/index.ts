@@ -6,17 +6,19 @@ import createHistory from 'history/createBrowserHistory';
 // @ts-ignore no @types module
 import { routerMiddleware as createRouterMiddleware } from 'react-router-redux';
 // @ts-ignore no @types module
-import { persistCombineReducers, persistStore } from 'redux-persist';
+import { persistCombineReducers, persistStore, PersistConfig, createWebStorage } from 'redux-persist';
 // @ts-ignore no @types module
 import storage from 'redux-persist/lib/storage';
 
 import { reducers } from 'reducers';
 import { rootSaga } from 'sagas';
 
-const config = {
+const webStorage = createWebStorage('storage');
+
+const config:PersistConfig = {
   key: 'app',
   blacklist: ['router'],
-  storage
+  storage: webStorage
 };
 
 const history = createHistory();
