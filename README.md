@@ -13,9 +13,10 @@ rename the repo, git init, etc
 ```
 
 ## Features
-- ⌨ typescript-first with tslint & prettier
-- 👌 react-router, redux-persist, and more out of the box
-- 🕸 webpack for code-splitting, hot reloading, and more!
-- 🔧 utilities for creating components, deployment, and CI
-- 🎨 sass modules + styled components
-- 💹 built for DX with minimal config
+- ⌨ **Typescript** typescript-first with tslint & prettier
+- 👌 **React** react-router, redux-persist, and more out of the box
+- 🕸 **Webpack** webpack for code-splitting, hot reloading, and more!
+- 🔧 **Utils** utilities for creating components, deployment, and CI
+- 🎨 **CSS** sass modules + styled components
+- 👓 **Acessibility** built with accessibility in mind
+- 💹 **Developer Experience** great DX with minimal config
