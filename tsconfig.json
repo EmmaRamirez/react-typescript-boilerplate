@@ -11,7 +11,7 @@
       "noLib": false,
       "jsx": "react",
       "experimentalDecorators": true,
-      "allowSyntheticDefaultImports": false,
+      "allowSyntheticDefaultImports": true,
       "allowJs": true,
       "lib": [
         "dom",

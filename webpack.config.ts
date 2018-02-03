@@ -82,7 +82,6 @@ module.exports = {
                     ]
                 })
             },
-            
             {
                 test: /\.(woff|woff2)$/,
                 loader: 'url-loader',
