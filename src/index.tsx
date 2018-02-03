@@ -19,15 +19,16 @@ const history = createHistory();
 
 render(
   <Provider store={store}>
-    <PersistGate
+    {/* <PersistGate
       loading={<div>Loading...</div>}
       onBeforeLift={undefined}
       persistor={persistor}
-    >
-      <ConnectedRouter history={history}>
+    > */}
+      <App />
+      {/* <ConnectedRouter history={history}>
         <Route exact path='/' component={App} />
-      </ConnectedRouter>
-    </PersistGate>
+      </ConnectedRouter> */}
+    {/* </PersistGate> */}
   </Provider>,
   mountNode
 );

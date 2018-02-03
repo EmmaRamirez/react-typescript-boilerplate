@@ -109,10 +109,10 @@ module.exports = {
         ]
     },
     plugins: [
-        // /* Use this plugin to transfer from source to dist */
-        // new CopyWebpackPlugin([
-        //     { from: './src/index.html', to: './index.html' },
-        // ]),
+        /* Use this plugin to transfer from source to dist */
+        new CopyWebpackPlugin([
+            { from: './src/manifest.webmanifest', to: './manifest.webmanifest' },
+        ]),
 
         new HtmlWebpackPlugin({
             inject: true,

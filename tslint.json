@@ -66,7 +66,6 @@
           "variable-declaration": "nospace"
       }],
       "trailing-comma": true,
-      "valid-typeof": true,
       "variable-name": [true, "ban-keywords"],
       "whitespace": [true,
           "check-branch",
