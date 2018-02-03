@@ -8,14 +8,15 @@
     "prebuild": "npm run lint",
     "build": "webpack",
     "build:watch": "webpack --watch",
-    "styleguide": "styleguidist server --config styleguide.config.js --verbose",
-    "styleguide:build": "styleguidist build --config styleguide.config.js --verbose",
-    "clean": "rimraf dist",
+    "clean:dist": "rimraf dist",
+    "clean:modules": "rimraf node_modules",
+    "clean": "clean:dist && clean:modules",
     "pretest": "npm run lint",
     "lint": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
     "prestart": "webpack",
-    "serve": "ts-node --disableWarnings server-src",
-    "start": "npm run serve"
+    "serve": "ts-node --disableWarnings ./server.ts",
+    "start": "npm run serve",
+    "format": "prettier --config .prettierrc --write {src}/**/*.{ts,tsx} && npm run lint"
   },
   "keywords": [
     "react",
@@ -25,7 +26,18 @@
   "author": "Emma Ramirez <ramirez.emma.g@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "prettier": "^1.10.2"
+    "@types/redux-logger": "^3.0.5",
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.9",
+    "file-loader": "^1.1.6",
+    "node-sass": "^4.7.2",
+    "prettier": "^1.10.2",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "@types/jest": "^22.1.1",
