@@ -20,7 +20,7 @@
     "serve:dev": "webpack-dev-server",
     "serve": "ts-node --disableWarnings ./server.ts",
     "start": "npm run serve",
-    "test": "jest --coverage --config jest-config"
+    "test": "jest --coverage --config jest-config.json"
   },
   "keywords": [
     "react",
