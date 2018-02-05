@@ -1,2 +1,2 @@
 export * from './App';
-export * from './Button';
+export { Button } from './Button';
